@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UITest : MonoBehaviour
+public class MainSceneTest : MonoBehaviour
 {
     public Rect titleRect;
     public GUIContent titleContent;
@@ -22,7 +22,10 @@ public class UITest : MonoBehaviour
         {
             SceneManager.LoadScene("MainGameScene");
         }
-        GUI.Button(btnRect1, "设置", btnStyle);
+        if(GUI.Button(btnRect1, "设置", btnStyle))
+        {
+            SceneManager.LoadScene("SettingScene");
+        }
         GUI.Button(btnRect2, "退出游戏", btnStyle);
     }
 }
