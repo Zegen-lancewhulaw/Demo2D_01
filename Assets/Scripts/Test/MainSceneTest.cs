@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainSceneTest : MonoBehaviour
 {
+    public static MainSceneTest instance;
+    public static void WakeUp()
+    {
+        if(instance != null)
+        {
+            instance.gameObject.SetActive(true);
+        }
+    }
+
     public Rect titleRect;
     public GUIContent titleContent;
     public GUIStyle titleStyle;
@@ -14,6 +23,12 @@ public class MainSceneTest : MonoBehaviour
     public Rect btnRect2;
 
     public GUIStyle btnStyle;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void OnGUI()
     {
         GUI.Label(titleRect, titleContent, titleStyle);
@@ -24,7 +39,8 @@ public class MainSceneTest : MonoBehaviour
         }
         if(GUI.Button(btnRect1, "…Ë÷√", btnStyle))
         {
-            SceneManager.LoadScene("SettingScene");
+            SettingPanelTest.WakeUp();
+            this.gameObject.SetActive(false);
         }
         GUI.Button(btnRect2, "ÕÀ≥ˆ”Œœ∑", btnStyle);
     }
