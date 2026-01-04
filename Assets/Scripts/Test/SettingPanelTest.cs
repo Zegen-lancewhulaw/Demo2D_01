@@ -17,6 +17,13 @@ public class SettingPanelTest : MonoBehaviour
     public Rect audioToggleRect;
     public GUIContent audioToggleContent;
 
+    public Rect audioVolumnLabelRect;
+    public GUIContent audioVolumnLabelContent;
+    public GUIStyle audioVolumnLabelStyle;
+
+    public Rect audioVolumnSliderRect;
+    
+
     public Rect modeOneToggleRect;
     public GUIContent modeOneToggleContent;
 
@@ -30,6 +37,9 @@ public class SettingPanelTest : MonoBehaviour
 
     private bool _isAudioEnable;
     private int _modeIndex = 1;
+    private float _currentAudioVolumn;
+    private readonly float maxAudioVolumn = 100f;
+    private readonly float minAudioVolumn = 0f;
 
 
     private void Awake()
@@ -48,6 +58,10 @@ public class SettingPanelTest : MonoBehaviour
 
         // 复选框：开启声音
         _isAudioEnable = GUI.Toggle(audioToggleRect, _isAudioEnable, audioToggleContent, defaultToggleStyle);
+        // 横向拖动条：音量
+        GUI.Label(audioVolumnLabelRect, audioVolumnLabelContent, audioVolumnLabelStyle);
+        _currentAudioVolumn = GUI.HorizontalSlider(audioVolumnSliderRect, _currentAudioVolumn, minAudioVolumn, maxAudioVolumn);
+
 
         // 单选框：模式一、二、三
         if(GUI.Toggle(modeOneToggleRect, _modeIndex == 1, modeOneToggleContent, defaultToggleStyle))

@@ -35,7 +35,8 @@ public class MainSceneTest : MonoBehaviour
 
         if(GUI.Button(btnRect0, "开始游戏", btnStyle))
         {
-            SceneManager.LoadScene("MainGameScene");
+            LoginPanelTest.WakeUp();
+            this.gameObject.SetActive(false);
         }
         if(GUI.Button(btnRect1, "设置", btnStyle))
         {
