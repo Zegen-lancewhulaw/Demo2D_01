@@ -151,6 +151,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9430de15b8b55f840af715a8cf6916d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 910
+    height: 512
+  backgroundTex: {fileID: 2800000, guid: 6c8078a7d12a54f4d916f683abff2aa7, type: 3}
+  UIBoxRect:
+    serializedVersion: 2
+    x: 250
+    y: 95
+    width: 550
+    height: 300
   closeRect:
     serializedVersion: 2
     x: 750
@@ -645,6 +658,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145d60dccd82f0044baac37de183d43f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 910
+    height: 512
+  backgroundTex: {fileID: 2800000, guid: 6c8078a7d12a54f4d916f683abff2aa7, type: 3}
   titleRect:
     serializedVersion: 2
     x: 360
@@ -943,10 +963,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8ed95871f91854987cf6221489d5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 910
+    height: 512
+  backgroundTex: {fileID: 2800000, guid: 6c8078a7d12a54f4d916f683abff2aa7, type: 3}
   closeRect:
     serializedVersion: 2
-    x: 600
-    y: 20
+    x: 640
+    y: 15
     width: 40
     height: 40
   closeStyle:
@@ -1016,6 +1043,12 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  UIBoxRect:
+    serializedVersion: 2
+    x: 250
+    y: 10
+    width: 435
+    height: 400
   audioToggleRect:
     serializedVersion: 2
     x: 300

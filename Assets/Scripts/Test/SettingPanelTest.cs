@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class SettingPanelTest : MonoBehaviour
 {
+    public Rect backgroundRect;
+    public Texture backgroundTex;
+
     public static SettingPanelTest instance;
     public static void WakeUp()
     {
@@ -13,6 +16,8 @@ public class SettingPanelTest : MonoBehaviour
 
     public Rect closeRect;
     public GUIStyle closeStyle;
+
+    public Rect UIBoxRect;
 
     public Rect audioToggleRect;
     public GUIContent audioToggleContent;
@@ -37,7 +42,7 @@ public class SettingPanelTest : MonoBehaviour
 
     private bool _isAudioEnable;
     private int _modeIndex = 1;
-    private float _currentAudioVolumn;
+    private float _currentAudioVolumn = 100f;
     private readonly float maxAudioVolumn = 100f;
     private readonly float minAudioVolumn = 0f;
 
@@ -49,8 +54,14 @@ public class SettingPanelTest : MonoBehaviour
     }
     private void OnGUI()
     {
+        // »æÖÆ±³¾°Í¼
+        GUI.DrawTexture(backgroundRect, backgroundTex);
+
+        // »æÖÆUI¿ò
+        GUI.Box(UIBoxRect, string.Empty);
+
         // ¹Ø±Õ¼ü
-        if(GUI.Button(closeRect, string.Empty, closeStyle))
+        if (GUI.Button(closeRect, string.Empty, closeStyle))
         {
             MainSceneTest.WakeUp();
             this.gameObject.SetActive(false);

@@ -14,6 +14,11 @@ public class LoginPanelTest : MonoBehaviour
         }
     }
 
+    public Rect backgroundRect;
+    public Texture backgroundTex;
+
+    public Rect UIBoxRect;
+
     public Rect closeRect;
     public GUIStyle closeStyle;
 
@@ -46,6 +51,12 @@ public class LoginPanelTest : MonoBehaviour
 
     private void OnGUI()
     {
+        // »æÖÆ±³¾°Í¼
+        GUI.DrawTexture(backgroundRect, backgroundTex);
+
+        // »æÖÆUI¿ò
+        GUI.Box(UIBoxRect, string.Empty);
+
         // ¹Ø±Õ¼ü
         if (GUI.Button(closeRect, string.Empty, closeStyle))
         {
