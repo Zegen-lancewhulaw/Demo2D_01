@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageTest : MonoBehaviour
+public class TextTest : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        Image image = this.GetComponent<Image>();
-        image.color = Color.red;
-        image.sprite = Resources.Load<Sprite>("button_hongse");
+        Text t  = GetComponent<Text>();
+        t.text = "込込込込��";
+        t.resizeTextForBestFit = true;
         (this.transform as RectTransform).sizeDelta = new Vector2(300, 100);
-        this.transform.localScale = new Vector3(1, 1, 1);
+        t.fontStyle = FontStyle.Bold;
     }
 
     // Update is called once per frame
